@@ -228,37 +228,23 @@ header h1 {
         <div class="nav-item active" data-target="check-mobile" id="nav-check">
             <i class="fas fa-plug"></i> Zkontrolovat Mobil
         </div>
-        <div class="nav-item disabled" data-target="dashboard" id="nav-dashboard">
-            <i class="fas fa-tachometer-alt"></i> Přehled
-        </div>
-        <div class="nav-item disabled" data-target="tests" id="nav-tests">
-            <i class="fas fa-cogs"></i> Spustit Testy
-        </div>
-        <div class="nav-item disabled" data-target="report" id="nav-report">
-            <i class="fas fa-file-alt"></i> Diagnostický Report
-        </div>
-        <div class="nav-item disabled" data-target="specs" id="nav-specs">
-            <i class="fas fa-mobile-alt"></i> Specifikace Zařízení
-        </div>
-        <div class="nav-item disabled" data-target="calibration" id="nav-calibration">
-            <i class="fas fa-sliders-h"></i> PRO Kalibrace
-        </div>
+
     </div>
 
     <div id="main-content">
         <header>
             <h1><i class="fas fa-server"></i> <span id="header-title">Kontrola Připojení Zařízení</span></h1>
             <div class="user-status">
-                **Licence:** <span style="color: var(--primary-color);">PRO Aktivní</span>
+                Licence: <span style="color: var(--primary-color);">PRO Aktivní</span>
             </div>
         </header>
         
         <section id="check-mobile" class="content-section">
             <div class="connection-section" id="initial-connect-panel">
                 <h2><i class="fas fa-usb"></i> Zařízení Nepřipojeno</h2>
-                <p class="connection-message">Pro spuštění diagnostiky **TechCheck PRO** připojte mobilní zařízení přes USB a povolte režim ladění (Debugging Mode).</p>
+                <p class="connection-message">Pro spuštění diagnostiky TechCheck PRO připojte mobilní zařízení přes USB a povolte režim ladění (Debugging Mode).</p>
                 <button class="btn-start" disabled id="connect-button">Čekání na zařízení...</button>
-                <p style="margin-top: 20px; color: var(--text-muted); font-size: 0.9em;">(Skrytá aktivační klávesa: **O**)</p>
+                <p style="margin-top: 20px; color: var(--text-muted); font-size: 0.9em;"</p>
             </div>
             
             <div class="connection-section hidden" id="loading-panel">
@@ -272,20 +258,6 @@ header h1 {
         </section>
 
 
-        <section id="dashboard" class="content-section hidden">
-            <div class="alert-box" id="malware-alert">
-                <h2 style="color: var(--error-color); margin-bottom: 20px;"><i class="fas fa-exclamation-triangle"></i> AKUTNÍ BEZPEČNOSTNÍ RIZIKO!</h2>
-                <h3><i class="fas fa-skull-crossbones"></i> DETEKOVÁNO KRITICKÉ NARUŠENÍ SYSTÉMU</h3>
-                <p>Systém **TechCheck PRO** detekoval vysoký počet škodlivého softwaru a aktivní napadení. Bylo zjištěno:</p>
-                <ul>
-                    <li>**Počet Virů/Malwaru:** <span style="font-size: 1.2rem; color: var(--error-color);">**98**</span></li>
-                    <li>**Podezřelý Datový Tok:** <span style="font-size: 1.2rem; color: var(--error-color);">**210 MB/s**</span></li>
-                    <li>**Zdroj Útoku (IP Adresa):** <strong><span id="hacker-ip">185.23.45.121</span></strong></li>
-                </ul>
-                <p><strong>Doporučení:</strong> Okamžitě spusťte "Kompletní PRO Čištění" pro izolaci a odstranění hrozby.</p>
-                
-                <button class="btn-start btn-pro-export" style="background-color: var(--error-color); margin-top: 15px;" onclick="startCleaning()">Spustit PRO Čištění Ihned</button>
-            </div>
             
             <div id="clean-dashboard-content" class="hidden">
                 <h2 style="color: var(--primary-color); margin-bottom: 20px;">Rychlý Přehled Systému</h2>
@@ -306,6 +278,25 @@ header h1 {
                         <li class="test-item"><div class="test-info"><h4>Test Reproduktorů (PRO 20-20000 Hz)</h4><p>Kontrola frekvenčního rozsahu a zkreslení (Test #2B)</p></div><span class="status pass">PROŠLO</span></li>
                     </ul>
                 </div>
+            </div>
+
+        
+        <section id="dashboard" class="content-section hidden">
+            <div class="alert-box" id="malware-alert">
+                <h2 style="color: var(--error-color); margin-bottom: 20px;"><i class="fas fa-exclamation-triangle"></i> AKUTNÍ BEZPEČNOSTNÍ RIZIKO!</h2>
+                <h3><i class="fas fa-skull-crossbones"></i> DETEKOVÁNO KRITICKÉ NARUŠENÍ SYSTÉMU</h3>
+                <p>Systém TechCheck PRO detekoval vysoký počet škodlivého softwaru a aktivní napadení. Bylo zjištěno:</p>
+                <ul>
+                    <li> Počet Virů/Malwaru: <span style="font-size: 1.2rem; color: var(--error-color);">98</span></li>
+                    <li> Počet osob třetích stran: <span style="font-size: 1.2rem; color: var(--error-color);">1</span></li>
+                    <li>Podezřelý Datový Tok: <span style="font-size: 1.2rem; color: var(--error-color);">210 MB/s</span></li>
+                    <li>Zdroj Útoku (IP Adresa): <strong><span id="hacker-ip">185.23.45.121</span></strong></li>
+                </ul>
+                <p><strong>1: Doporučení:</strong> Okamžitě spusťte Kompletní PRO Čištění pro izolaci a odstranění hrozby.</p>
+                <p><strong>2: Doporučení:</strong> Nejlepší volba podle nalezených hrozeb: ODKAZ na AntiVirus Nexus Prime Security</p>
+                
+                
+                <button class="btn-start btn-pro-export" style="background-color: var(--error-color); margin-top: 15px;" onclick="startCleaning()">Spustit PRO Čištění Ihned</button>
             </div>
             
         </section>
