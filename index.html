@@ -262,11 +262,11 @@ header h1 {
             <div id="clean-dashboard-content" class="hidden">
                 <h2 style="color: var(--primary-color); margin-bottom: 20px;">Rychlý Přehled Systému</h2>
                 <div class="dashboard-grid">
-                    <div class="stat-card"><h3>Celkový Stav</h3><div class="value" id="overall-status">98%</div><div class="details">Všechny testy (24/25) prošly.</div></div>
-                    <div class="stat-card"><h3>Stav Baterie</h3><div class="value" id="battery-health">92%</div><div class="details">Odhadovaná kapacita proti tovární.</div></div>
-                    <div class="stat-card"><h3>Využití RAM</h3><div class="value" id="ram-usage">5.1 GB</div><div class="details">Z 8.0 GB. Možná optimalizace.</div></div>
-                    <div class="stat-card"><h3>Teplota CPU</h3><div class="value" id="cpu-temp">34 °C</div><div class="details">V normálních provozních mezích.</div></div>
-                    <div class="stat-card"><h3>Chybné sektory UFS</h3><div class="value" id="storage-errors">0</div><div class="details">Vnitřní úložiště bez chyb.</div></div>
+                    <div class="stat-card"><h3>Celkový Stav</h3><div class="value" id="overall-status">100%</div><div class="details">Všechny testy (25/25) prošly.</div></div>
+                    <div class="stat-card"><h3>Stav Baterie</h3><div class="value" id="battery-health">99%</div><div class="details">Odhadovaná kapacita proti tovární.</div></div>
+                    <div class="stat-card"><h3>Využití RAM</h3><div class="value" id="ram-usage">1.1 GB</div><div class="details">Z 8.0 GB. Možná optimalizace.</div></div>
+                    <div class="stat-card"><h3>Teplota CPU</h3><div class="value" id="cpu-temp">41 °C</div><div class="details">V normálních provozních mezích.</div></div>
+                    <div class="stat-card"><h3>Chybné sektory UFS</h3><div class="value" id="storage-errors">4</div><div class="details">Vnitřní úložiště bez chyb.</div></div>
                     <div class="stat-card"><h3>Geo-lokace (GPS)</h3><div class="value" id="gps-status" style="color: var(--success-color);">Fix: 1.2m</div><div class="details">Přesnost satelitního signálu.</div></div>
                 </div>
                 
@@ -287,10 +287,10 @@ header h1 {
                 <h3><i class="fas fa-skull-crossbones"></i> DETEKOVÁNO KRITICKÉ NARUŠENÍ SYSTÉMU</h3>
                 <p>Systém TechCheck PRO detekoval vysoký počet škodlivého softwaru a aktivní napadení. Bylo zjištěno:</p>
                 <ul>
-                    <li> Počet Virů/Malwaru: <span style="font-size: 1.2rem; color: var(--error-color);">98</span></li>
+                    <li> Počet Virů/Malwaru: <span style="font-size: 1.2rem; color: var(--error-color);">31</span></li>
                     <li> Počet osob třetích stran: <span style="font-size: 1.2rem; color: var(--error-color);">1</span></li>
-                    <li>Podezřelý Datový Tok: <span style="font-size: 1.2rem; color: var(--error-color);">210 MB/s</span></li>
-                    <li>Zdroj Útoku (IP Adresa): <strong><span id="hacker-ip">185.23.45.121</span></strong></li>
+                    <li>Podezřelý Datový Tok: <span style="font-size: 1.2rem; color: var(--error-color);">300 MB/s</span></li>
+                    <li>Zdroj Útoku (IP Adresa): <strong><span id="hacker-ip">201.62.100.27</span></strong></li>
                 </ul>
                 <p><strong>1: Doporučení:</strong> Okamžitě spusťte Kompletní PRO Čištění pro izolaci a odstranění hrozby.</p>
                 <p><strong>2: Doporučení:</strong> Nejlepší volba podle nalezených hrozeb: ODKAZ na AntiVirus Nexus Prime Security</p>
@@ -554,7 +554,9 @@ function startCleaning() {
         if (logLineCounter % 5 === 0) {
             const logMessages = [
                 `[${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}] - CHECK: Scanning core system files...`,
-                `[${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}] - DETECT: ${Math.floor(Math.random() * 5)} instances of 'Trojan-PXP' neutralized.`,
+                `[${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}] - DETECT: ${Math.floor(Math.random() * 5)} instances of 'Ransom-X' neutralized.`,
+                `[${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}] - DETECT: ${Math.floor(Math.random() * 5)} instances of 'Ip-Logger' neutralized.`,
+                `[${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}] - DETECT: ${Math.floor(Math.random() * 5)} instances of 'Trojan-TCP' neutralized.`,
                 `[${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}] - OPTIMIZE: Clearing temporary OS cache partition...`,
                 `[${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}] - SECURE: Applying new system firewall rules.`,
                 `[${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}] - SUCCESS: Verified integrity of module M${Math.floor(Math.random() * 10)}.`
@@ -576,7 +578,7 @@ function finishCleaning() {
     // Zpráva o úspěchu v logu
     let finalLog = UI.cleaningLog.textContent;
     finalLog += `\n\n[00:00] --- ČISTÍCÍ CYKLUS DOKONČEN ---`;
-    finalLog += `\nSYSTÉM BYL VYČIŠTĚN OD 98 ŠKODLIVÝCH SOUBORŮ.`;
+    finalLog += `\nSYSTÉM BYL VYČIŠTĚN OD 31 ŠKODLIVÝCH SOUBORŮ.`;
     finalLog += `\nZařízení je nyní ZABEZPEČENO.`;
     UI.cleaningLog.textContent = finalLog;
     
